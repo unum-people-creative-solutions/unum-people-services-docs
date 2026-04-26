@@ -1,0 +1,58 @@
+openapi: 3.0.3
+info:
+  title: Unum People - Lead Ingestion API
+  description: API para integração de Landing Pages externas com o CRM Unum People.
+  version: 1.0.0
+servers:
+  - url: https://api.unumpeople.com/v1
+    description: Servidor de Produção
+
+paths:
+  /ingest:
+    post:
+      summary: Enviar novo lead
+      description: Captura os dados de um formulário e envia para o CRM.
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - nome
+                - telefone
+              properties:
+                nome:
+                  type: string
+                  example: "João Silva"
+                email:
+                  type: string
+                  format: email
+                  example: "joao@email.com"
+                telefone:
+                  type: string
+                  example: "11999998888"
+                origem:
+                  type: string
+                  example: "Landing Page Campanha X"
+                metadados:
+                  type: object
+                  additionalProperties:
+                    type: string
+                  description: Campos extras como UTMs, URL de origem, etc.
+      responses:
+        '201':
+          description: Lead capturado com sucesso
+        '401':
+          description: API Key inválida ou ausente
+        '400':
+          description: Payload inválido
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key

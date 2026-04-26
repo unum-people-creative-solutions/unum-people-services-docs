@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unum People - Central de Ajuda & API Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css" />
+    <link rel="icon" type="image/png" href="https://unumpeople.com/favicon.png">
+    <style>
+        .tab-active { border-bottom: 3px solid #2563eb; color: #2563eb; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="font-black text-2xl tracking-tighter text-blue-600 uppercase">Unum People</span>
+                <span class="text-xs font-bold text-gray-400 border-l pl-3 uppercase tracking-widest">Docs</span>
+            </div>
+            <nav class="flex gap-8">
+                <button onclick="switchTab('help')" id="tab-help" class="h-16 font-bold text-sm tab-active transition-all">Central de Ajuda</button>
+                <button onclick="switchTab('api')" id="tab-api" class="h-16 font-bold text-sm text-gray-500 hover:text-blue-600 transition-all">Documentação API</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        
+        <!-- Tab: Help Center -->
+        <div id="content-help" class="space-y-12">
+            <section class="max-w-3xl">
+                <h1 class="text-4xl font-black text-gray-900 mb-4 tracking-tight">Bem-vindo à Central de Ajuda Unum People</h1>
+                <p class="text-lg text-gray-600 leading-relaxed">Tudo o que você precisa saber para dominar o seu CRM e converter mais leads.</p>
+            </section>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 font-black text-xl">01</div>
+                    <h3 class="text-xl font-bold mb-3">Como cadastrar um lead manualmente</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">No painel principal (Kanban), clique no botão <span class="bg-blue-600 text-white px-2 py-0.5 rounded text-xs font-bold">+ Novo Lead</span>. Preencha os campos obrigatórios e salve. O lead aparecerá instantaneamente na primeira coluna.</p>
+                    <ul class="text-xs font-bold text-gray-400 space-y-2">
+                        <li class="flex items-center gap-2">✓ Nome do Cliente</li>
+                        <li class="flex items-center gap-2">✓ WhatsApp com DDD</li>
+                        <li class="flex items-center gap-2">✓ Origem do Lead</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center mb-6 font-black text-xl">02</div>
+                    <h3 class="text-xl font-bold mb-3">Registrando uma nova venda</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Existem duas formas: arraste um lead para a coluna <span class="text-green-600 font-bold uppercase">Ganho</span> ou clique no botão superior <span class="text-green-600 font-bold tracking-tight">TrendingUp Nova Venda</span>. Informe o valor bruto da transação.</p>
+                    <div class="bg-green-50 border border-green-100 p-3 rounded-lg">
+                        <p class="text-[10px] text-green-700 font-bold uppercase">Dica do Pro:</p>
+                        <p class="text-xs text-green-800">O sistema calcula automaticamente o LTV (Lifetime Value) total de cada cliente baseado no histórico de vendas.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-purple-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 font-black text-xl">03</div>
+                    <h3 class="text-xl font-bold mb-3">Gerenciando contas (Tenants)</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Se você gerencia múltiplos negócios, use o seletor no topo da tela para trocar de conta. Cada conta possui sua própria base de leads e API Key única.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6 font-black text-xl">04</div>
+                    <h3 class="text-xl font-bold mb-3">Mover para trás</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Ao tentar mover um lead para uma etapa anterior do funil, o sistema solicitará uma confirmação. Isso evita erros de operação e garante a integridade dos dados.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: API Docs -->
+        <div id="content-api" class="hidden">
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden min-h-[600px]">
+                <div id="swagger-ui"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-500 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+            <p class="text-sm font-bold uppercase tracking-widest mb-2">Unum People CRM</p>
+            <p class="text-xs">© 2026 Todos os direitos reservados. Landing Pages como Serviço.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js"></script>
+    <script>
+        function switchTab(tab) {
+            const help = document.getElementById('content-help');
+            const api = document.getElementById('content-api');
+            const tabHelp = document.getElementById('tab-help');
+            const tabApi = document.getElementById('tab-api');
+
+            if (tab === 'help') {
+                help.classList.remove('hidden');
+                api.classList.add('hidden');
+                tabHelp.classList.add('tab-active');
+                tabApi.classList.remove('tab-active');
+                tabHelp.classList.remove('text-gray-500');
+                tabApi.classList.add('text-gray-500');
+            } else {
+                help.classList.add('hidden');
+                api.classList.remove('hidden');
+                tabHelp.classList.remove('tab-active');
+                tabApi.classList.add('tab-active');
+                tabHelp.classList.add('text-gray-500');
+                tabApi.classList.remove('text-gray-500');
+                
+                // Initialize Swagger UI when tab is opened
+                if (!window.ui) {
+                    window.ui = SwaggerUIBundle({
+                        url: "./openapi.yaml",
+                        dom_id: '#swagger-ui',
+                        deepLinking: true,
+                        presets: [
+                            SwaggerUIBundle.presets.apis,
+                            SwaggerUIBundle.presets.standalone
+                        ],
+                        layout: "BaseLayout"
+                    });
+                }
+            }
+        }
+
+        // Mock initialization for testing local files if needed
+        window.onload = () => {
+             // Se houver hash na URL, troca tab
+             if(window.location.hash === '#api') switchTab('api');
+        };
+    </script>
+</body>
+</html>
