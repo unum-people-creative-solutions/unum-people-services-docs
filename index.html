@@ -3,14 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unum People - Corporate Documentation Hub</title>
+    <title>Unum People - Documentation Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="images/icon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        unum: {
+                            blue: '#0A1C82',
+                            purple: '#6B00D7',
+                            orange: '#FF3D00',
+                            grey: '#6E7191',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
         .bg-unum-gradient { background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
-        .hero-pattern { background-image: radial-gradient(#2563eb 0.5px, transparent 0.5px); background-size: 24px 24px; opacity: 0.05; }
+        .brand-gradient {
+            background: linear-gradient(135deg, #0A1C82 0%, #6B00D7 50%, #FF3D00 100%);
+        }
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #0A1C82 0%, #6B00D7 50%, #FF3D00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-pattern { background-image: radial-gradient(#0A1C82 0.5px, transparent 0.5px); background-size: 24px 24px; opacity: 0.05; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
     </style>
 </head>
@@ -34,10 +61,10 @@
     <main class="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div class="max-w-3xl mb-20">
             <h1 class="text-5xl sm:text-7xl font-black text-gray-900 mb-8 tracking-tighter leading-none uppercase italic">
-                Soluções que <span class="text-blue-600 font-black">Conectam</span> Pessoas.
+                Soluções que <span class="brand-gradient-text">Conectam</span> Pessoas.
             </h1>
             <p class="text-xl text-gray-500 font-medium leading-relaxed">
-                Bem-vindo ao centro de documentação global da Unum People. Aqui você encontrará guias técnicos, especificações de API e manuais de sucesso para todo o nosso ecossistema de software.
+                O centro de conhecimento oficial da Unum People. Encontre aqui tudo o que você precisa para dominar seu CRM, integrar Landing Pages e escalar seus resultados.
             </p>
         </div>
 
@@ -49,31 +76,61 @@
                     <img src="images/logo_simbolo.png" class="w-32 h-auto rotate-12">
                 </div>
                 
-                <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-[10px] font-black uppercase mb-8 tracking-widest border border-blue-100">
+                <div class="inline-flex items-center gap-2 bg-unum-blue/5 text-unum-blue px-4 py-1.5 rounded-full text-[10px] font-black uppercase mb-8 tracking-widest border border-unum-blue/10">
                     SaaS CRM
                 </div>
                 
-                <h3 class="text-3xl font-black text-gray-900 mb-4 tracking-tight uppercase group-hover:text-blue-600 transition-colors">People CRM</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-8">
-                    Gestão inteligente de leads, funil de vendas automatizado e integração direta com Landing Pages via API Keys exclusivas.
+                <h3 class="text-3xl font-black text-gray-900 mb-4 tracking-tight uppercase group-hover:text-unum-blue transition-colors">Unum People CRM</h3>
+                <p class="text-unum-grey text-sm leading-relaxed mb-8">
+                    Gestão inteligente de leads, alertas de inatividade, registro de faturamento e integrações nativas com Google Ads.
                 </p>
                 
-                <div class="flex items-center gap-2 text-blue-600 font-black text-xs uppercase tracking-widest">
-                    Explorar Documentação 
+                <div class="flex items-center gap-2 text-unum-blue font-black text-xs uppercase tracking-widest">
+                    Acessar Guia Completo
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </div>
             </a>
 
-            <!-- Placeholder para Próximo Projeto -->
-            <div class="p-10 bg-gray-50/50 rounded-[40px] border border-dashed border-gray-200 flex flex-col justify-center items-center text-center opacity-60">
-                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            <!-- API Docs Card -->
+            <a href="crm/#api" class="group block p-10 bg-slate-900 rounded-[40px] border border-slate-800 shadow-xl transition-all card-hover relative overflow-hidden text-white">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-auto text-white rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                 </div>
-                <h3 class="font-bold text-gray-400 uppercase text-xs tracking-widest">Novo Projeto em breve</h3>
+                
+                <div class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase mb-8 tracking-widest border border-white/20">
+                    Developer
+                </div>
+                
+                <h3 class="text-3xl font-black text-white mb-4 tracking-tight uppercase">API Reference</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                    Documentação Swagger completa para integração de Landing Pages externas via API Keys e Webhooks.
+                </p>
+                
+                <div class="flex items-center gap-2 text-white font-black text-xs uppercase tracking-widest">
+                    Ver Endpoints 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Support Card -->
+            <div class="p-10 bg-gray-50/50 rounded-[40px] border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-black text-gray-400 uppercase text-[10px] tracking-widest mb-4">Suporte ao Cliente</h3>
+                    <h4 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-4">Ainda com dúvidas?</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">Nossa equipe de Customer Success está pronta para ajudar você a configurar sua primeira campanha.</p>
+                </div>
+                <a href="mailto:suporte@unumpeople.com.br" class="inline-flex items-center gap-2 text-unum-blue font-black text-xs uppercase tracking-widest hover:underline">
+                    Abrir Chamado
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </a>
             </div>
 
         </div>
@@ -87,9 +144,9 @@
         </div>
         
         <div class="flex gap-8">
-            <a href="#" class="text-[10px] font-black uppercase text-gray-400 hover:text-blue-600 transition-colors tracking-widest">Suporte</a>
-            <a href="#" class="text-[10px] font-black uppercase text-gray-400 hover:text-blue-600 transition-colors tracking-widest">Privacidade</a>
-            <a href="#" class="text-[10px] font-black uppercase text-gray-400 hover:text-blue-600 transition-colors tracking-widest">Status</a>
+            <a href="#" class="text-[10px] font-black uppercase text-gray-400 hover:text-unum-blue transition-colors tracking-widest">Suporte</a>
+            <a href="#" class="text-[10px] font-black uppercase text-gray-400 hover:text-unum-blue transition-colors tracking-widest">Privacidade</a>
+            <a href="#" class="text-[10px] font-black uppercase text-gray-400 hover:text-unum-blue transition-colors tracking-widest">Status</a>
         </div>
     </footer>
 
