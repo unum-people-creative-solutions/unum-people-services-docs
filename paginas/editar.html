@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar a página depois de publicada — Central de ajuda Unum People</title>
+    <meta name="description" content="Como mudar textos, imagens e aparência da página e publicar as alterações.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        unum: {
+                            blue: '#0A1C82',
+                            purple: '#6B00D7',
+                            orange: '#FF3D00',
+                            grey: '#6E7191',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-unum-gradient { background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #0A1C82 0%, #6B00D7 50%, #FF3D00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        a:focus-visible, summary:focus-visible { outline: 3px solid #6B00D7; outline-offset: 3px; border-radius: 4px; }
+        code { overflow-wrap: anywhere; background: #eff6ff; color: #0A1C82; padding: 0.1rem 0.4rem; border-radius: 0.375rem; font-size: 0.9em; }
+        .passos > li::marker { font-weight: 700; color: #0A1C82; }
+    </style>
+</head>
+<body class="bg-unum-gradient min-h-screen text-gray-900">
+
+    <header class="bg-white/80 border-b shadow-sm">
+        <div class="max-w-3xl mx-auto px-4 h-16 flex items-center">
+            <a href="../" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <img src="../images/logo_simbolo.png" alt="Unum People" class="h-9 w-auto">
+                <img src="../images/logo_texto.png" alt="" class="h-5 w-auto border-l pl-3 border-gray-200 hidden sm:block">
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-8 sm:py-12">
+        <nav aria-label="Trilha" class="text-sm text-gray-600 mb-6">
+            <a href="../" class="underline hover:text-unum-blue">Central de ajuda</a>
+            <span aria-hidden="true"> &rsaquo; </span>
+            <a href="./" class="underline hover:text-unum-blue">Páginas</a> <span aria-hidden="true">&rsaquo;</span> <span aria-current="page" class="font-semibold text-gray-700">Editar a página depois de publicada</span>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight mb-4">Editar a página depois de publicada</h1>
+        <p class="mb-6 text-gray-700"><strong>Para quem é:</strong> todos os planos.</p>
+        <p class="mb-6 text-gray-700 leading-relaxed">A página que está no ar só muda quando você publica. Tudo o que você edita antes disso fica guardado como rascunho.</p>
+        <ol class="passos list-decimal pl-6 space-y-4 text-gray-800 leading-relaxed">
+            <li>Entre em <a href="https://unumpeople.app/minha-conta" target="_blank" rel="noopener noreferrer" class="font-semibold text-unum-blue underline">Minha conta</a> e, no cartão da página, clique em <strong>Editar</strong>. Se já houver alterações guardadas, o botão se chama <strong>Continuar editando</strong>. Atalho: digite <code>/editar</code> no fim do endereço da página (<code>seu-nome.unumpeople.app/editar</code>).</li>
+            <li>Toque no texto para mudar. Toque na imagem para trocar. Nos cards (diferenciais, depoimentos), o <strong>+</strong> cria um e <strong>Remover</strong> tira. <strong>Ocultar seção</strong> tira um bloco da página sem apagar o texto.</li>
+            <li>Para outras mudanças, abra o menu <strong>Editar</strong> da barra (no celular, ele fica no <strong>Menu</strong>, o ícone ☰). Use <strong>Pré-visualizar</strong> para ver a página como o visitante vê.</li>
+            <li>Enquanto você edita, a barra mostra <strong>Alterações não publicadas</strong>, com a hora em que foram salvas. A página no ar continua igual.</li>
+            <li>Quando estiver pronto, clique em <strong>Publicar</strong> na barra e confirme em <strong>Publicar</strong>, na janela <strong>Publicar as alterações?</strong>. Aparece <strong>Página publicada.</strong>, com o link <strong>Ver página</strong>. Sem alterações, o botão fica inativo e a dica dele diz <strong>Nada para publicar</strong>.</li>
+        </ol>
+
+        <section class="mt-10 p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <h2 class="text-lg font-black text-gray-900 mb-3">O que há no menu Editar</h2>
+            <ul class="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
+                <li><strong>Editar tema:</strong> cores e fontes da página.</li>
+                <li><strong>Editar layout:</strong> a ordem e o formato das seções.</li>
+                <li><strong>Dados da página:</strong> o nome do negócio e o destino do botão.</li>
+                <li><strong>Buscas:</strong> o título e a descrição que o Google mostra.</li>
+                <li><strong>Editar com sua IA:</strong> reescreve os textos com a ajuda do ChatGPT, Gemini ou Claude (veja abaixo).</li>
+                <li><strong>Como editar:</strong> reabre o guia dentro do editor.</li>
+            </ul>
+        </section>
+
+        <section class="mt-10 p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <h2 class="text-lg font-black text-gray-900 mb-3">Desistir das alterações</h2>
+            <p class="text-gray-700 leading-relaxed">Clique em <strong>Descartar alterações</strong> e confirme em <strong>Descartar</strong>. A página volta a ser exatamente o que está no ar, e o que você editou desde a última publicação se perde.</p>
+        </section>
+
+        <section class="mt-10 p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <h2 class="text-lg font-black text-gray-900 mb-3">Editar com sua IA</h2>
+            <p class="text-gray-700 leading-relaxed mb-3">A Unum prepara as instruções; você as copia (<strong>Copiar instruções</strong>) e cola na IA que já usa. Depois cola a resposta inteira em <strong>Cole a resposta aqui</strong> e clica em <strong>Ver mudanças</strong>. A lista <strong>O que vai mudar</strong> mostra tudo antes de entrar na página, e só entra o que você aceitar, em <strong>Aplicar</strong>.</p>
+            <p class="text-gray-700 leading-relaxed">Esse diálogo não envia nada à Unum: o texto que você copiar vai para a IA que você escolher.</p>
+        </section>
+
+        <aside class="mt-10 p-6 bg-white rounded-3xl border border-unum-blue/20 shadow-sm">
+            <h2 class="text-lg font-black text-gray-900 mb-2">Algo não funcionou?</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Escreva para <a href="mailto:atendimento@unumpeople.com.br" class="font-semibold text-unum-blue underline">atendimento@unumpeople.com.br</a>
+                e informe o endereço da sua página (por exemplo, <code>seu-nome.unumpeople.app</code>) e o que apareceu na tela.
+            </p>
+        </aside>
+
+        <p class="mt-8">
+            <a href="./" class="inline-flex items-center gap-2 font-bold text-unum-blue underline">&larr; Voltar à central de ajuda</a>
+        </p>
+
+    </main>
+
+    <footer class="max-w-3xl mx-auto px-4 pb-12 text-xs text-gray-600">
+        <p>&copy; 2026 Unum People Creative Solutions</p>
+    </footer>
+
+</body>
+</html>
