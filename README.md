@@ -14,6 +14,8 @@ Repositório central da **Central de Ajuda** e **Documentação Técnica** do ec
 - `/index.html`: Portal principal (Hub de Documentação).
 - `/crm/index.html`: Central de Ajuda específica do CRM, integrando manuais e Swagger UI.
 - `/crm/openapi.yaml`: Especificação oficial da Lead Ingestion API.
+- `/paginas/`: Central de ajuda das páginas do LP Builder (HTML estático): `index.html` (índice) e cinco artigos (`publicar.html`, `dominio.html`, `editar.html`, `blog.html`, `crm-no-celular.html`). Linkada pelo rodapé da vitrine em `https://docs.unumpeople.com.br/paginas/`.
+- `/scripts/verificar-ajuda.sh`: verificação de `paginas/` (estrutura, links, expressões proibidas, `rel` em links externos). Rode `bash scripts/verificar-ajuda.sh` antes de commitar mudanças em `paginas/`; o código de saída é 0 quando tudo passa e 1 quando algo falha.
 - `/images/`: Ativos visuais de marca e ilustrações dos manuais.
 
 ## 2. Tecnologias
