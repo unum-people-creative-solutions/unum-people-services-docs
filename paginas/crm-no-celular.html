@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalar o CRM no celular — Central de ajuda Unum People</title>
+    <meta name="description" content="Como colocar o CRM, onde ficam os seus contatos, na tela inicial do celular e receber aviso de novo contato.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        unum: {
+                            blue: '#0A1C82',
+                            purple: '#6B00D7',
+                            orange: '#FF3D00',
+                            grey: '#6E7191',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-unum-gradient { background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #0A1C82 0%, #6B00D7 50%, #FF3D00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        a:focus-visible, summary:focus-visible { outline: 3px solid #6B00D7; outline-offset: 3px; border-radius: 4px; }
+        code { overflow-wrap: anywhere; background: #eff6ff; color: #0A1C82; padding: 0.1rem 0.4rem; border-radius: 0.375rem; font-size: 0.9em; }
+        .passos > li::marker { font-weight: 700; color: #0A1C82; }
+    </style>
+</head>
+<body class="bg-unum-gradient min-h-screen text-gray-900">
+
+    <header class="bg-white/80 border-b shadow-sm">
+        <div class="max-w-3xl mx-auto px-4 h-16 flex items-center">
+            <a href="../" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <img src="../images/logo_simbolo.png" alt="Unum People" class="h-9 w-auto">
+                <img src="../images/logo_texto.png" alt="" class="h-5 w-auto border-l pl-3 border-gray-200 hidden sm:block">
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-8 sm:py-12">
+        <nav aria-label="Trilha" class="text-sm text-gray-600 mb-6">
+            <a href="../" class="underline hover:text-unum-blue">Central de ajuda</a>
+            <span aria-hidden="true"> &rsaquo; </span>
+            <a href="./" class="underline hover:text-unum-blue">Páginas</a> <span aria-hidden="true">&rsaquo;</span> <span aria-current="page" class="font-semibold text-gray-700">Instalar o CRM no celular</span>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight mb-4">Instalar o CRM no celular</h1>
+        <p class="mb-6 text-gray-700"><strong>Para quem é:</strong> quem tem o serviço de CRM (onde ficam os seus contatos) no plano. Se ele estiver no seu plano, a <strong>Minha conta</strong> mostra o botão <strong>Abrir o CRM</strong>.</p>
+        <ol class="passos list-decimal pl-6 space-y-4 text-gray-800 leading-relaxed">
+            <li>No navegador do celular, abra <a href="https://crm.unumpeople.com.br" target="_blank" rel="noopener noreferrer" class="font-semibold text-unum-blue underline">crm.unumpeople.com.br</a> (no Chrome, se for Android; no Safari, se for iPhone) e entre com o seu e-mail e senha.</li>
+            <li><strong>No Android:</strong> abra o menu do Chrome e escolha a opção de instalar ou de adicionar à tela inicial. O CRM ganha um ícone chamado <strong>Unum CRM</strong> e abre em tela própria.</li>
+            <li><strong>No iPhone:</strong> no Safari, toque em <strong>Compartilhar</strong> e depois em <strong>Adicionar à Tela de Início</strong>. Se o iPhone oferecer a opção de abrir como app da web, deixe-a ativada. Depois, abra o CRM sempre pelo ícone novo da tela de início, não pelo Safari.</li>
+            <li>Com o CRM aberto, toque no botão de menu no alto da tela (o <strong>Menu Principal</strong>; no celular, às vezes só aparece o ícone) e depois em <strong>Configurações e LGPD</strong>. Na aba <strong>Minha Conta</strong>, na seção <strong>Notificações Push</strong>, ligue a chave de <strong>Notificações no Navegador</strong> e toque em permitir quando o celular perguntar.</li>
+            <li>Pronto. Quando um novo contato chegar, o celular mostra o aviso (ele aparece como <strong>Novo Lead Recebido!</strong>, "lead" é o nome técnico de um novo contato). Ao tocar nele, o CRM abre no quadro de contatos.</li>
+        </ol>
+
+        <section class="mt-10 p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <h2 class="text-lg font-black text-gray-900 mb-3">Só no iPhone: o que a Apple exige</h2>
+            <p class="text-gray-700 leading-relaxed">No iPhone, o aviso de novo contato <strong>só funciona com o CRM adicionado à Tela de Início</strong>, e a partir do iOS 16.4. Em uma aba comum do Safari, o aviso não chega. (Fonte: Apple, <a href="https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/" target="_blank" rel="noopener noreferrer" class="font-semibold text-unum-blue underline">Web Push for Web Apps on iOS and iPadOS</a>.)</p>
+        </section>
+
+        <section class="mt-10 p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <h2 class="text-lg font-black text-gray-900 mb-3">O aviso não chegou?</h2>
+            <ul class="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
+                <li>Se a chave de <strong>Notificações no Navegador</strong> estiver desativada e o CRM mostrar que as notificações estão bloqueadas, libere-as nas configurações do site (Android) ou nos Ajustes do iPhone, em <strong>Notificações</strong>, na entrada do CRM. Depois volte ao CRM e ligue a chave.</li>
+                <li>No iPhone, confirme que o CRM foi aberto pelo ícone da tela de início.</li>
+            </ul>
+        </section>
+
+        <aside class="mt-10 p-6 bg-white rounded-3xl border border-unum-blue/20 shadow-sm">
+            <h2 class="text-lg font-black text-gray-900 mb-2">Algo não funcionou?</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Escreva para <a href="mailto:atendimento@unumpeople.com.br" class="font-semibold text-unum-blue underline">atendimento@unumpeople.com.br</a>
+                e informe o endereço da sua página (por exemplo, <code>seu-nome.unumpeople.app</code>) e o que apareceu na tela.
+            </p>
+        </aside>
+
+        <p class="mt-8">
+            <a href="./" class="inline-flex items-center gap-2 font-bold text-unum-blue underline">&larr; Voltar à central de ajuda</a>
+        </p>
+
+    </main>
+
+    <footer class="max-w-3xl mx-auto px-4 pb-12 text-xs text-gray-600">
+        <p>&copy; 2026 Unum People Creative Solutions</p>
+    </footer>
+
+</body>
+</html>
