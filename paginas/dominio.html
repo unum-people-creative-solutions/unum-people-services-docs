@@ -72,7 +72,7 @@
             <h2 class="text-lg font-black text-gray-900 mb-3">Se a tela pedir mais alguma coisa</h2>
             <ul class="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
                 <li><strong>Aguardando a propagação:</strong> os registros ainda não chegaram. A propagação de DNS pode demorar e isso não é erro. Espere um pouco e clique em <strong>Verificar</strong> de novo.</li>
-                <li><strong>Registro TXT de posse:</strong> aparece quando o domínio já está em outro projeto. Crie também esse registro, no mesmo painel, para comprovar que o domínio é seu.</li>
+                <li><strong>Registro TXT de posse:</strong> aparece quando o domínio já está em outro projeto. Nesse caso o domínio ainda não fica salvo: crie esse registro no painel do provedor, espere ele propagar e clique em <strong>Salvar</strong> de novo. Depois siga com os registros A e CNAME e com <strong>Verificar</strong>.</li>
                 <li><strong>Falta autorizar o certificado:</strong> crie um registro do tipo <code>CAA</code>, com Nome/Host <code>@</code> e valor <code>0 issue &quot;letsencrypt.org&quot;</code>.</li>
                 <li><strong>Conflito no seu provedor:</strong> remova o registro A ou CNAME antigo que usa o mesmo nome e deixe só os registros indicados na tela.</li>
                 <li><strong>Limite de verificações atingido:</strong> espere o tempo que a tela informar e clique em <strong>Verificar</strong> de novo.</li>
