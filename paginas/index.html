@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas — Central de ajuda Unum People</title>
+    <meta name="description" content="Passo a passo para publicar, editar e cuidar da sua página.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        unum: {
+                            blue: '#0A1C82',
+                            purple: '#6B00D7',
+                            orange: '#FF3D00',
+                            grey: '#6E7191',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-unum-gradient { background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #0A1C82 0%, #6B00D7 50%, #FF3D00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        a:focus-visible, summary:focus-visible { outline: 3px solid #6B00D7; outline-offset: 3px; border-radius: 4px; }
+        code { overflow-wrap: anywhere; background: #eff6ff; color: #0A1C82; padding: 0.1rem 0.4rem; border-radius: 0.375rem; font-size: 0.9em; }
+        .passos > li::marker { font-weight: 700; color: #0A1C82; }
+    </style>
+</head>
+<body class="bg-unum-gradient min-h-screen text-gray-900">
+
+    <header class="bg-white/80 border-b shadow-sm">
+        <div class="max-w-3xl mx-auto px-4 h-16 flex items-center">
+            <a href="../" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <img src="../images/logo_simbolo.png" alt="Unum People" class="h-9 w-auto">
+                <img src="../images/logo_texto.png" alt="" class="h-5 w-auto border-l pl-3 border-gray-200 hidden sm:block">
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-8 sm:py-12">
+        <nav aria-label="Trilha" class="text-sm text-gray-600 mb-6">
+            <a href="../" class="underline hover:text-unum-blue">Central de ajuda</a>
+            <span aria-hidden="true"> &rsaquo; </span>
+            <span aria-current="page" class="font-semibold text-gray-700">Páginas</span>
+        </nav>
+        <h1 class="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight mb-4">Ajuda com a sua <span class="brand-gradient-text">página</span></h1>
+        <p class="mb-8 text-gray-700 leading-relaxed">Cinco guias curtos, com o nome exato dos botões e das telas, para você resolver sozinho.</p>
+        <ul class="space-y-4">
+            <li>
+                <a href="publicar.html" class="group block p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-black text-gray-900 group-hover:text-unum-blue mb-2">Publicar a sua página</h2>
+                    <p class="text-gray-700 leading-relaxed mb-3">O que acontece depois de contratar e como saber quando a página entra no ar.</p>
+                    <p class="text-sm text-gray-600"><strong>Para quem é:</strong> todos os planos.</p>
+                </a>
+            </li>
+            <li>
+                <a href="dominio.html" class="group block p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-black text-gray-900 group-hover:text-unum-blue mb-2">Ligar o seu domínio</h2>
+                    <p class="text-gray-700 leading-relaxed mb-3">Faça a página abrir no seu próprio endereço, como seunegocio.com.br.</p>
+                    <p class="text-sm text-gray-600"><strong>Para quem é:</strong> todos os planos.</p>
+                </a>
+            </li>
+            <li>
+                <a href="editar.html" class="group block p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-black text-gray-900 group-hover:text-unum-blue mb-2">Editar a página depois de publicada</h2>
+                    <p class="text-gray-700 leading-relaxed mb-3">Mude textos, imagens e aparência e publique quando quiser.</p>
+                    <p class="text-sm text-gray-600"><strong>Para quem é:</strong> todos os planos.</p>
+                </a>
+            </li>
+            <li>
+                <a href="blog.html" class="group block p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-black text-gray-900 group-hover:text-unum-blue mb-2">Escrever no blog</h2>
+                    <p class="text-gray-700 leading-relaxed mb-3">Crie posts e veja como eles aparecem na sua página.</p>
+                    <p class="text-sm text-gray-600"><strong>Para quem é:</strong> quem tem o serviço de blog.</p>
+                </a>
+            </li>
+            <li>
+                <a href="crm-no-celular.html" class="group block p-6 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-black text-gray-900 group-hover:text-unum-blue mb-2">Instalar o CRM no celular</h2>
+                    <p class="text-gray-700 leading-relaxed mb-3">Coloque o CRM, onde ficam os seus contatos, na tela inicial e receba avisos.</p>
+                    <p class="text-sm text-gray-600"><strong>Para quem é:</strong> quem tem o serviço de CRM.</p>
+                </a>
+            </li>
+        </ul>
+
+        <aside class="mt-10 p-6 bg-white rounded-3xl border border-unum-blue/20 shadow-sm">
+            <h2 class="text-lg font-black text-gray-900 mb-2">Algo não funcionou?</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Escreva para <a href="mailto:atendimento@unumpeople.com.br" class="font-semibold text-unum-blue underline">atendimento@unumpeople.com.br</a>
+                e informe o endereço da sua página.
+            </p>
+        </aside>
+
+        <p class="mt-8">
+            <a href="../" class="inline-flex items-center gap-2 font-bold text-unum-blue underline">&larr; Voltar à central de ajuda</a>
+        </p>
+
+    </main>
+
+    <footer class="max-w-3xl mx-auto px-4 pb-12 text-xs text-gray-600">
+        <p>&copy; 2026 Unum People Creative Solutions</p>
+    </footer>
+
+</body>
+</html>
