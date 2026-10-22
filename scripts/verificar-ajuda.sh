@@ -8,13 +8,13 @@ RAIZ="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$RAIZ"
 
 PASTA="paginas"
-ARTIGOS=(publicar dominio editar blog crm-no-celular)
+ARTIGOS=(publicar dominio editar blog crm-no-celular cancelar)
 FALHAS=0
 
 ok()    { echo "ok: $1"; }
 falha() { echo "FALHA: $1"; FALHAS=$((FALHAS + 1)); }
 
-# --- 1. Existência dos seis arquivos (RF-01) ---
+# --- 1. Existência do índice e dos artigos (RF-01) ---
 TODOS=("$PASTA/index.html")
 for a in "${ARTIGOS[@]}"; do TODOS+=("$PASTA/$a.html"); done
 
@@ -26,9 +26,9 @@ for f in "${TODOS[@]}"; do
     falha "arquivo ausente: $f"
   fi
 done
-[ "${#PRESENTES[@]}" -eq "${#TODOS[@]}" ] && ok "os 6 arquivos de $PASTA/ existem"
+[ "${#PRESENTES[@]}" -eq "${#TODOS[@]}" ] && ok "os ${#TODOS[@]} arquivos de $PASTA/ existem"
 
-# Artigos presentes (os cinco, sem o índice)
+# Artigos presentes (sem o índice)
 ARTIGOS_PRESENTES=()
 for a in "${ARTIGOS[@]}"; do
   [ -f "$PASTA/$a.html" ] && ARTIGOS_PRESENTES+=("$PASTA/$a.html")
@@ -90,8 +90,10 @@ for f in "${ARTIGOS_PRESENTES[@]}"; do
 done
 
 # --- 4. Expressões proibidas em paginas/ (RF-04 + recursos adiados) ---
-PROIBIDAS=("google ads" "app android" "aplicativo android" "landing page" "play store" "app store")
-ADIADAS=("portal do cliente" "cancelamento" "nova página")
+# "boleto": o checkout aceita só Pix e cartão desde 2026-10-13 (portal-cancelamento RF-D3).
+PROIBIDAS=("google ads" "app android" "aplicativo android" "landing page" "play store" "app store" "boleto")
+# "portal do cliente" e "cancelamento" saíram da lista em 2026-10-13 (portal-cancelamento).
+ADIADAS=("nova página")
 achou=0
 for f in "${PRESENTES[@]}"; do
   for expr in "${PROIBIDAS[@]}"; do
@@ -143,13 +145,13 @@ else
   falha "index.html da raiz não contém href=\"paginas/\""
 fi
 
-# --- 8. Índice lista os cinco artigos (RF-02) ---
+# --- 8. Índice lista todos os artigos (RF-02) ---
 if [ -f "$PASTA/index.html" ]; then
   faltam=0
   for a in "${ARTIGOS[@]}"; do
     grep -q "href=\"$a.html\"" "$PASTA/index.html" || { falha "$PASTA/index.html não linka $a.html"; faltam=1; }
   done
-  [ "$faltam" -eq 0 ] && ok "$PASTA/index.html linka os 5 artigos"
+  [ "$faltam" -eq 0 ] && ok "$PASTA/index.html linka os ${#ARTIGOS[@]} artigos"
 fi
 
 # --- 9. README lista paginas/ e o script (RF-10) ---
