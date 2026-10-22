@@ -187,7 +187,7 @@
                                 </li>
                                 <li class="flex gap-3">
                                     <span class="flex-shrink-0 w-6 h-6 bg-unum-blue text-white rounded-full flex items-center justify-center text-xs font-bold">3</span>
-                                    <span><strong>Google Ads ID:</strong> (Opcional) Insira seu ID de cliente para futuras integrações de conversão.</span>
+                                    <span><strong>Google Ads ID:</strong> (Opcional) Pode ser preenchido ou corrigido depois em Configurações › Google Ads.</span>
                                 </li>
                             </ul>
                         </div>
@@ -349,12 +349,21 @@
                         <div class="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm">
                             <h3 class="text-xl font-bold text-gray-900 mb-4">Como conectar:</h3>
                             <ol class="space-y-4 list-decimal list-inside font-medium text-gray-600">
-                                <li>Vá em <strong>Configurações</strong> no menu lateral do CRM.</li>
-                                <li>Procure a seção <strong>"Integração Google Ads"</strong>.</li>
-                                <li>Clique no botão <strong>"Conectar Conta Google"</strong>.</li>
-                                <li>Autorize o acesso do Unum People à sua conta de anúncios.</li>
-                                <li>Certifique-se de que o <strong>Customer ID</strong> está correto nas configurações do negócio.</li>
+                                <li>Vá em <strong>Configurações</strong> e abra a aba <strong>"Google Ads"</strong>.</li>
+                                <li>Clique em <strong>"Conectar Google Ads"</strong> e autorize o acesso do Unum People à sua conta de anúncios.</li>
+                                <li>Preencha o <strong>ID da conta</strong> (formato 000-000-0000), a <strong>Ação de venda</strong> e, se quiser, a <strong>Ação de recorrência</strong>, e clique em <strong>"Salvar"</strong>.</li>
                             </ol>
+                        </div>
+                        <div class="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Para onde vai cada venda:</h3>
+                            <div class="space-y-3 font-medium text-gray-600">
+                                <p>Quando um cliente que chegou por um anúncio do Google compra, a venda registrada no CRM é enviada ao Google Ads, com o valor.</p>
+                                <p><strong>Ação de venda:</strong> recebe as vendas.</p>
+                                <p><strong>Ação de recorrência (opcional):</strong> se preenchida, recebe as compras que vierem depois da primeira de cada cliente (recompra, mensalidade). Em branco, todas as vendas vão para a Ação de venda.</p>
+                                <p>Sem a Ação de venda, nenhuma venda é enviada.</p>
+                                <p><strong>Onde achar o número:</strong> no Google Ads, em Metas › Conversões, abra a ação e copie o número que aparece depois de ctId= no endereço. A ação deve ser de importação de conversões de cliques, com janela de 90 dias. Se ela deve orientar os lances, marque-a como principal no próprio Google Ads.</p>
+                                <p>O Google só aceita vendas feitas até 90 dias depois do clique no anúncio. Vendas mais tardias ficam no CRM, mas não são enviadas.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
